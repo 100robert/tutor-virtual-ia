@@ -1,5 +1,5 @@
 // ===== Configuration =====
-const GEMINI_API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent';
+const GEMINI_API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent';
 
 // ===== State Management =====
 let apiKey = localStorage.getItem('gemini_api_key') || '';
