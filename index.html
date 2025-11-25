@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutor Virtual potenciado con IA - Aprende cualquier tema de forma visual y fácil de entender">
+    <title>Tutor Virtual IA - Aprende Cualquier Tema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- API Key Modal -->
+    <div id="apiKeyModal" class="modal">
+        <div class="modal-content">
+            <h2>🔑 Configuración de API</h2>
+            <p>Para usar el Tutor Virtual, necesitas una API key de Google Gemini.</p>
+            <a href="https://aistudio.google.com/app/apikey" target="_blank" class="api-link">
+                Obtener API Key gratuita →
+            </a>
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="apiKeyInput" 
+                    placeholder="Ingresa tu API key de Gemini"
+                    autocomplete="off"
+                >
+                <button id="saveApiKey" class="btn-primary">
+                    Guardar y Comenzar
+                </button>
+            </div>
+            <p class="api-note">Tu API key se guarda localmente en tu navegador y nunca se comparte.</p>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" class="hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">Tutor Virtual IA</span>
+                </div>
+                <button id="settingsBtn" class="btn-icon" title="Configuración">
+                    ⚙️
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="heroSection" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Aprende <span class="gradient-text">Cualquier Tema</span> con IA
+                    </h1>
+                    <p class="hero-subtitle">
+                        Ingresa un tema y obtén una explicación visual, clara y fácil de entender generada por inteligencia artificial
+                    </p>
+                    
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="topicInput" 
+                            class="topic-input" 
+                            placeholder="Ej: Fotosíntesis, Teoría de la relatividad, Blockchain..."
+                            autocomplete="off"
+                        >
+                        <button id="generateBtn" class="btn-generate">
+                            <span class="btn-text">Generar Lección</span>
+                            <span class="btn-icon">✨</span>
+                        </button>
+                    </div>
+
+                    <div class="example-topics">
+                        <span class="example-label">Temas populares:</span>
+                        <button class="topic-chip" data-topic="Agujeros negros">Agujeros negros</button>
+                        <button class="topic-chip" data-topic="Inteligencia Artificial">Inteligencia Artificial</button>
+                        <button class="topic-chip" data-topic="ADN y genética">ADN y genética</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Section -->
+        <section id="loadingSection" class="loading-section hidden">
+            <div class="container">
+                <div class="loading-content">
+                    <div class="loading-spinner"></div>
+                    <h2 class="loading-title">Creando tu lección personalizada...</h2>
+                    <p class="loading-message" id="loadingMessage">Analizando el tema</p>
+                    <div class="loading-progress">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section id="contentSection" class="content-section hidden">
+            <div class="container">
+                <button id="newTopicBtn" class="btn-secondary">
+                    ← Nuevo Tema
+                </button>
+                
+                <article id="lessonContent" class="lesson-content">
+                    <!-- Dynamic content will be inserted here -->
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "tutor-virtual-ia",
+  "version": "1.0.0",
+  "description": "AI-powered academic tutor application",
+  "scripts": {
+    "dev": "npx http-server -p 8000 -c-1",
+    "build": "echo 'No build needed - static site'"
+  }
+}
